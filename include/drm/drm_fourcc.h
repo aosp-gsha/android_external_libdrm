@@ -168,6 +168,27 @@
  * authoritative source for all of these.
  */
 
+/*
+* Invalid Modifier
+*
+* This modifier can be used as a sentinel to terminate the format modifiers
+* list, or to initialize a variable with an invalid modifier. It might also be
+* used to report an error back to userspace for certain APIs.
+*/
+
+#define DRM_FORMAT_MOD_INVALID  fourcc_mod_code(NONE, DRM_FORMAT_RESERVED)
+ 
+/*
+* Linear Layout
+*
+* Just plain linear layout. Note that this is different from no specifying any
+* modifier (e.g. not setting DRM_MODE_FB_MODIFIERS in the DRM_ADDFB2 ioctl),
+* which tells the driver to also take driver-internal information into account
+* and so might actually result in a tiled framebuffer.
+*/
+#define DRM_FORMAT_MOD_LINEAR   fourcc_mod_code(NONE, 0)
+
+
 /* Intel framebuffer modifiers */
 
 /*

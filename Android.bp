@@ -63,3 +63,11 @@ cc_library {
         "-Wno-tautological-compare",
     ],
 }
+
+cc_library_headers {
+     name: "libdrm_inc",
+     export_include_dirs: [ 
+	".",
+	"include/drm",
+    ],
+}
